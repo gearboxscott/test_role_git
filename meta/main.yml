@@ -1,0 +1,18 @@
+galaxy_info:
+  role_name: role_git
+  author: Scott Parker
+  description: This will perform common git operations need to maintain a repository from Ansible
+  issue_tracker_url: https://github.com/gearboxscott/role_git/issues
+  license: GPL-3.0-or-later
+  min_ansible_version: 2.9
+  platforms:
+  - name: Fedora
+    versions:
+    - all
+  - name: EL
+    versions:
+    - all
+  galaxy_tags:
+    - git
+dependencies: []
+

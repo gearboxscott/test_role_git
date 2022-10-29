@@ -1,0 +1,21 @@
+﻿---
+
+- name: Check if git is installed
+  ansible.builtin.shell: rpm -qa | grep '{{ git_package }}'
+  register: git_installed
+  changed_when: false
+  ignore_errors: true
+  check_mode: false
+
+- name: Install or Not to Install
+  ansible.builtin.set_fact:
+    git_installed: true
+  when: git_installed == 0
+
+- name: Git is not install, so install git
+  ansible.builtin.package:
+    name: '{{ git_package }}'
+    state: present
+  when: not git_install | bool
+
+...
